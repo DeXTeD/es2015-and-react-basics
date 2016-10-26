@@ -1,0 +1,1 @@
+../../2-es2015-modules-promises/src/index.js
