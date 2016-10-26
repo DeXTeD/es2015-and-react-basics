@@ -14,7 +14,7 @@ getFilmsIdList().then((ids) => {
 
 // 2. Write Promise ////////////////////////////////////////
 
-function getFilmByIdNewPromise(id) {
+function getFilmById(id) {
     return new Promise((resolve, reject) => {
 
         axios.get(FILM_URL + id).then((response) => {
@@ -24,7 +24,7 @@ function getFilmByIdNewPromise(id) {
     });
 }
 
-getFilmByIdNewPromise(1)
+getFilmById(1)
     .then((film) => {
         console.log(film.title);
     });
