@@ -83,3 +83,49 @@ class App extends React.Component {
 }
 
 export default App;
+
+
+// 7. Show more on click
+export default function FilmInfo(props) {
+    const { film, showInfo, onShowMore } = props;
+    return (
+        <div onClick={() => onShowMore(film.episode_id)}>
+            <h1>{film.title}</h1>
+            {showInfo && <p>Director: {film.director}</p>}
+        </div>
+    );
+}
+
+class App extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            films: [],
+            open: null
+        };
+    }
+    componentDidMount() {
+        getFilms().then((films) => {
+            this.setState({
+                films: films
+            })
+        })
+    }
+    render () {
+        const { films, open } = this.state;
+        return <div>
+            {films.map((film) => (
+                <FilmInfo
+                    key={film.episode_id}
+                    showInfo={film.episode_id === open}
+                    onShowMore={(id) => {
+                        this.setState({open: id});
+                    }}
+                    film={film}
+                />
+            ))}
+        </div>
+    }
+}
+
+export default App;
