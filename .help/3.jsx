@@ -28,7 +28,7 @@ export default function App(props) {
     return <div>
         <h1>Films</h1>
         {films.map((film) => (
-            <FilmInfo film={film} />
+            <FilmInfo key={film.episode_id} film={film} />
         ))}
     </div>;
 }
