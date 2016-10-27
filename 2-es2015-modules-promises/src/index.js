@@ -1,6 +1,6 @@
 // # TODO:
 // first import getFilmsIdList from lib/films.js file & use
-// then import ajax film url consts from lib/consts.js
+// then import only one ajax film url const from lib/consts.js
 // install & import axios
 
 
@@ -17,7 +17,7 @@ function getFilms() {
 /***** Final example usage ****** /
 getFilms().then((films) => {
     films.forEach((f) => {
-        console.log(`Final result: ${f.title}`);
+        console.log(f.title);
     });
 });
 /******/
