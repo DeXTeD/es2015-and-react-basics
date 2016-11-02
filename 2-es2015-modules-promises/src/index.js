@@ -5,12 +5,12 @@
 
 
 function getFilmById(id) {
-    // TODO: implement
+    // TODO: send ajax and return promise with film data
 }
 
 
 function getFilms() {
-    // TODO: todo
+    // TODO: return promise with all films data (from getFilmsIdList ids)
 }
 
 
